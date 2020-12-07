@@ -1,0 +1,11 @@
+# Blank line seperated segments
+
+parts = []
+p = []
+for line in x.split("\n"):
+    if line == "":
+        parts.append(p)
+        p = []
+    else:
+        p.append(line)
+parts.append(p)
