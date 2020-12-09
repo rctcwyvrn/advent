@@ -1,3 +1,3 @@
-from input import x
+from input import inp
 from advent_lib import *
 

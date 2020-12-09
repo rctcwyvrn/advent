@@ -7,6 +7,6 @@ url = f"https://adventofcode.com/{aoc_year}/day/{aoc_day}/input"
 r = requests.get(url, cookies = login_cookie)
 
 with open("input.py", "w") as dest:
-    dest.write("x = \"\"\"")
+    dest.write("inp = \"\"\"")
     dest.write(r.text.strip())
     dest.write("\"\"\"")
