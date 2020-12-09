@@ -9,6 +9,7 @@ class VM:
         self.ip = 0
         self.acc = 0
         self.visited = []
+        
     def run(self, instrs):
         while True:
             if self.ip in self.visited:
@@ -49,35 +50,35 @@ def interpret(text):
     
     return (result, visited, acc)
 
-from input import x
+# from input import x
 
-def part1():
-    (_, _, acc) = interpret(x)
-    print(acc)
+# def part1():
+#     (_, _, acc) = interpret(x)
+#     print(acc)
 
-def part2():
-    instrs = x.split("\n")
-    (_, visited, _) = interpret(x)
+# def part2():
+#     instrs = x.split("\n")
+#     (_, visited, _) = interpret(x)
 
-    for ip in visited:
-        instr = instrs[ip]
-        op = instr.split(" ")[0]
-        val = instr.split(" ")[1]
-        sign = val[0]
-        val = int(val[1:])
+#     for ip in visited:
+#         instr = instrs[ip]
+#         op = instr.split(" ")[0]
+#         val = instr.split(" ")[1]
+#         sign = val[0]
+#         val = int(val[1:])
 
-        new_instrs = instrs.copy()
-        if op == "jmp":
-            new_instrs[ip] = "nop +0"
-        elif op == "nop":
-            new_instrs[ip] = "jmp " + sign + str(val)
-        else:
-            continue
-        print(f"switched {instrs[ip]} to {new_instrs[ip]}")
-        (result, _, acc) = interpret("\n".join(new_instrs))
-        if result == FINISHED:
-            print(acc)
-            return
+#         new_instrs = instrs.copy()
+#         if op == "jmp":
+#             new_instrs[ip] = "nop +0"
+#         elif op == "nop":
+#             new_instrs[ip] = "jmp " + sign + str(val)
+#         else:
+#             continue
+#         print(f"switched {instrs[ip]} to {new_instrs[ip]}")
+#         (result, _, acc) = interpret("\n".join(new_instrs))
+#         if result == FINISHED:
+#             print(acc)
+#             return
 
-part1()
-part2()
+# part1()
+# part2()
